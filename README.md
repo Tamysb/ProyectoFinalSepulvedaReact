@@ -9,5 +9,5 @@
 1. Clonar el repositorio
 2. Instalar```npm install```
 3. Empezar ```npm run dev```
-##Demo
+## Demo
 [deploy de la pagina web](https://proyectofin.netlify.app/)
