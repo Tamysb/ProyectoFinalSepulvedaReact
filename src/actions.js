@@ -53,7 +53,62 @@ export function genereteProductos(){
                 "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/1.png",
                           
             ],                 
-                  
+        "id": 7,
+            "title": "Chanel Coco Noir Eau De",
+            "description": "Coco Noir by Chanel is an elegant and mysterious fragrance, featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions.",
+            "category": "fragrances",
+            "price": 129.99,
+            "images": [
+                "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/1.png"
+            ] ,
+            "id": 8,
+            "title": "Dior J'adore",
+            "description": "J'adore by Dior is a luxurious and floral fragrance, known for its blend of ylang-ylang, rose, and jasmine. It embodies femininity and sophistication.",
+            "category": "fragrances",
+            "price": 89.99,
+            "images": [
+                "https://cdn.dummyjson.com/products/images/fragrances/Dior%20J'adore/1.png"
+            ], 
+            "id": 9,
+            "title": "Dolce Shine Eau de",
+            "description": "Dolce Shine by Dolce & Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent.",
+            "category": "fragrances",
+            "price": 69.99,
+            "images": [
+                "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/1.png"
+            ],
+            "id": 10,
+            "title": "Gucci Bloom Eau de",
+            "description": "Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper. It's a modern and romantic scent.",
+            "category": "fragrances",
+            "price": 79.99,
+            "images": [
+                "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/1.png"
+            ],
+            "id": 118,
+            "title": "Attitude Super Leaves Hand Soap",
+            "description": "Attitude Super Leaves Hand Soap is a natural and nourishing hand soap enriched with the goodness of super leaves. It cleanses and moisturizes your hands, leaving them feeling fresh and soft.",
+            "category": "skin-care",
+            "price": 8.99,
+            "images": [
+                "https://cdn.dummyjson.com/products/images/skin-care/Attitude%20Super%20Leaves%20Hand%20Soap/1.png"
+            ],
+            "id": 119,
+            "title": "Olay Ultra Moisture Shea Butter Body Wash",
+            "description": "Olay Ultra Moisture Shea Butter Body Wash is a luxurious body wash that hydrates and nourishes your skin with the moisturizing power of shea butter. Enjoy a rich lather and silky-smooth skin.",
+            "category": "skin-care",
+            "price": 12.99,
+            "images": [
+                "https://cdn.dummyjson.com/products/images/skin-care/Olay%20Ultra%20Moisture%20Shea%20Butter%20Body%20Wash/1.png"
+            ],
+            "id": 120,
+            "title": "Vaseline Men Body and Face Lotion",
+            "description": "Vaseline Men Body and Face Lotion is a specially formulated lotion designed to provide long-lasting moisture to men's skin. It absorbs quickly and helps keep the skin hydrated and healthy.",
+            "category": "skin-care",
+            "price": 9.99,
+            "images": [
+                "https://cdn.dummyjson.com/products/images/skin-care/Vaseline%20Men%20Body%20and%20Face%20Lotion/1.png"
+            ]          
              
     }).then((res)=>{
     console.log(res)
