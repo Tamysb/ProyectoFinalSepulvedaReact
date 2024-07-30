@@ -1,20 +1,45 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import CheckoutForm from "../CheckoutForm/CheckoutForm"
-const Checkout = () => {
+import { carritoContexto } from "../../CarritoProvider"
+import { Link } from "react-router-dom"
+import { addDoc, collection, getFirestore, serverTimestamp} from "firebase/firestore";
+import { app } from "../../firebaseConfig";
+const db= getFirestore(app)
 
-  const [data, setData] = useState(0)
-  const [loading,setLoading]= useState(false)
+const Checkout = () => {
   const [orderId,setOrderId]= useState()
-  if(loading){
-    return <h1>Se esta generando su orden</h1>
-  }
+  const {carrito,total,clearCarrito}=useContext(carritoContexto)
+  const createNewOrder = async ({name,phone,email}) => {
+    try{
+    const orderData = {
+    userData: {name,phone,email},
+    items:carrito,
+    total:total,
+    status: 'Pending',
+    createdAt: serverTimestamp()
+    };
+    const coleccionventas=collection(db,"orden")
+    const cartRef = await addDoc(coleccionventas,orderData)
+    setOrderId(cartRef.id)
+    clearCarrito()
+    }catch (error) {
+    console.error(error);
+    throw error;}
+    }
+    
   if(orderId){
-    return <h1>Orden de compra :{orderId}</h1>
+    return (
+       <div>
+        <h1>Compra Exitosa</h1>
+        <p>Orden de compra :{orderId}</p>
+        <Link to="/" className="flex justify-center gap-4 p-2 m-4 text-black bg-red-400 rounded-md shadow-xl">Volver a productos</Link>
+       </div>
+      )
   }
 
   return (
-    <div>
-      <CheckoutForm onConfirm={createOrder}/>
+    <div >
+      <CheckoutForm onConfirm={createNewOrder}/>
     </div>
   )
 }

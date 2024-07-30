@@ -1,31 +1,21 @@
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import { genereteProductos, getProductosByCategory, getProductos } from "../../actions";
+// genereteProductos()
 
 function ItemListContainer(){
     const [productos,setProductos]= useState([])
-    const params = useParams()
+    const {category} = useParams()
 
     useEffect(() => {
-      if(params.id){
-        fetch('https://dummyjson.com/products/category/' + params.id)
-        .then((res) => {
-            return res.json()
-        })
-        .then((data) => {
-            setProductos(data.products)
-        })  
+      if(category){
+        getProductosByCategory(category).then((res)=>{setProductos(res)})
        }
        else{
-        fetch('https://dummyjson.com/products')
-        .then((res) => {
-            return res.json()
-        })
-        .then((data) => {
-            setProductos(data.products)
-        })
+        getProductos().then((res) => { setProductos(res) })
        } 
-    },[params.id])
+    },[category])
 
     return (
         <div>

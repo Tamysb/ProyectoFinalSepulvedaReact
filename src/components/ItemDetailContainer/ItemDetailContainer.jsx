@@ -1,19 +1,12 @@
 import { useEffect, useState } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom"
-import Carrito from "../Carrito/Carrito"
+import { getProductosById } from "../../actions"
 function ItemDetailContainer(){
     const [producto,setProducto]=useState({})
     const {id}= useParams()
     useEffect(()=>{
-        fetch(`https://dummyjson.com/products/${id}`)
-            .then((res) =>{
-                return res.json()
-            })
-            .then((data)=>{
-                console.log(data)
-                setProducto(data)
-            });
+        getProductosById(id).then((res) => { setProducto(res)}).catch((error)=>console.log(error))
     },[id])
     return(
         <div>

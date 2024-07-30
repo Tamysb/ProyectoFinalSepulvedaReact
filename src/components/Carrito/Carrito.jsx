@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext} from "react"
 import { carritoContexto } from "../../CarritoProvider"
 import { Link } from "react-router-dom"
 import CarritoItem from "../CarritoItem/CarritoItem"
@@ -16,7 +16,6 @@ function Carrito(){
         )
     }
 
-console.log({total})
     return(
         <div>
         {carrito.map((producto)=><CarritoItem key={producto.id}{...producto}/>)}

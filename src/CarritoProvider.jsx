@@ -3,26 +3,28 @@ export const carritoContexto = createContext({carrito:[]})
 const Provider = carritoContexto.Provider
 function CarritoProvider(props){
     const [carrito,setCarrito]= useState([])
-    const [total,setTotal]= useState("")
+    const [total,setTotal]= useState(0)
     const [totalCantidad,setTotalCantidad]=useState(0)
     const agregarAlCarrito=(item, contador)=>{
         if(!isInCarrito(item.id)){
             setCarrito(prev=>[...prev,{...item,contador}])
-            setTotalCantidad(item.id * contador)
-            setTotal(item.precio * contador)
-            console.log(total)
+            setTotalCantidad(totalCantidad+ contador)
+            setTotal(total+item.price *contador)
 
         }else{
-            console.log("el producto ya fue agregado")
+            
+            console.log("agregado")
         }
-        
-        
+        setCarrito([...carrito,{...item,contador}])
+        setTotalCantidad(totalCantidad+ contador)
+        setTotal(total+item.price *contador)
+        console.log(total)
     }
+    
     const removerCarrito=(producto)=>{
         console.log(carrito) 
         const eliminar= carrito.filter((item) =>item.id !== producto.id)
-        // const newTotal = eliminar.reduce((acc, item) => acc + item.precio * item.contador, 0);
-        setTotal(total-producto.precio*producto.contador);
+        setTotal(total-producto.price*producto.contador);
         setCarrito(eliminar)
         setTotalCantidad(totalCantidad-producto.contador)
         console.log(eliminar)
@@ -35,6 +37,7 @@ function CarritoProvider(props){
     }
     const isInCarrito=(itemId)=>{
         return carrito.some(producto=> producto.id === itemId)
+        
     }
     return(
         <Provider value={{carrito,agregarAlCarrito,removerCarrito,clearCarrito,total,totalCantidad}}>

@@ -12,7 +12,6 @@ function ItemDetail({id,title,price,images,category,description}){
         }
         agregarAlCarrito(item,contador)
     }
-  
     return(
         <div className="grid grid-cols-2" >
             <article className="p-4 text-black bg-red-300 rounded-md shadow-xl">
@@ -21,10 +20,7 @@ function ItemDetail({id,title,price,images,category,description}){
               <p>{description}</p>
               <p>${price}</p>
               {cantidad> 0 ?(<Link to="/carrito">Ir al Carrito</Link>):(<ItemCount onAdd={handleOnAdd}/>)}
-             
-              
-            </article>
-              
+            </article>   
         </div>
     )
 }

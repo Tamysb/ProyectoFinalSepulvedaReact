@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext} from "react"
 import { carritoContexto } from "../../CarritoProvider"
 import { Link } from "react-router-dom"
 function CartWidget(){

@@ -14,20 +14,20 @@ function CheckoutForm ({onConfirm}){
     }
     return(
         <div>
-            <form onSubmit={handleConfirm}>
+            <form className="flex flex-row m-4" onSubmit={handleConfirm}>
                 <label>
                     nombre
-                    <input type="text" value={name} onChange={({target})=>setName(target.value)}/>
+                    <input className="text-black bg-red-300 rounded-md shadow-xl " type="text" value={name} onChange={({target})=>setName(target.value)}/>
                 </label>
                 <label>
                     telefono
-                    <input type="text" value={phone} onChange={({target})=>setPhone(target.value)}/>
+                    <input className="text-black bg-red-300 rounded-md shadow-xl " type="text" value={phone} onChange={({target})=>setPhone(target.value)}/>
                 </label>
                 <label>
                     correo
-                    <input type="text" value={email} onChange={({target})=>setEmail(target.value)}/>
+                    <input className="text-black bg-red-300 rounded-md shadow-xl " type="text" value={email} onChange={({target})=>setEmail(target.value)}/>
                 </label>
-
+                <button type="submit" className="flex justify-center p-2 m-4 text-orange-900 bg-red-200 rounded-md shadow-xl hover:scale-105">terminar compra</button>
             </form>
         </div>
     )
