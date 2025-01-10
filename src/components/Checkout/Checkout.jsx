@@ -30,15 +30,16 @@ const Checkout = () => {
   if(orderId){
     return (
        <div>
-        <h1>Compra Exitosa</h1>
-        <p>Orden de compra :{orderId}</p>
-        <Link to="/" className="flex justify-center gap-4 p-2 m-4 text-black bg-red-400 rounded-md shadow-xl">Volver a productos</Link>
+        <h1 className="flex justify-center gap-4 p-2 m-4 text-black">Compra Exitosa</h1>
+        <p className="flex justify-center gap-4 p-2 m-4 font-bold text-red-400">Orden de compra :{orderId}</p>
+        <Link to="/" className="flex justify-center gap-4 p-2 m-4 text-center text-black bg-red-400 rounded-md shadow-xl hover:scale-105 hover:bg-red-200">Volver a productos</Link>
        </div>
       )
   }
 
   return (
-    <div >
+    <div className="grid sm:grid-cols-4">
+      <h1 className="col-start-1 col-end-2 p-2 m-2 text-2xl font-blod text-slate-600 sm:col-start-1 sm:col-end-3">Formulario Checkout</h1>
       <CheckoutForm onConfirm={createNewOrder}/>
     </div>
   )

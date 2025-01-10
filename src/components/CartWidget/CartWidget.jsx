@@ -7,8 +7,8 @@ function CartWidget(){
     
    
     return (
-        <Link to="/carrito" >
-            <img src="/carrito.png" alt="carrito" className="inline-block w-10 h-10 "/> 
+        <Link to="/carrito" className="font-bold text-red-400 hover:scale-105">
+            <img src="/carrito.png" alt="carrito" className="inline-block p-1 w-9 h-9"/> 
             {totalCantidad}
             </Link>
   
